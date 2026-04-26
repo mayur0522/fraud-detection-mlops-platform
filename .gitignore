@@ -1,0 +1,164 @@
+# Python
+.agent/
+.archive/
+journal/
+.cursor/
+__pycache__/
+*.py[cod]
+*$py.classss
+*.soq
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+venv/
+env/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+dist/
+dist-ssr/
+*.local
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+terraform.tfvars
+*.tfvars
+.terraformrc
+terraform.rc
+
+# Docker
+*.log
+
+# Azure
+.azure/
+
+# ML Models (large files - uncomment if you want to exclude)
+# *.pkl
+# *.joblib
+# *.onnx
+# models/
+# *.h5
+# *.ckpt
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Logs
+logs/
+*.log
+*.worker_logs.txt
+/dev_artifacts_archive.zip
+/_archive/
+/api_logs.txt
+/backend_logs.txt
+/celery_logs.txt
+/docker_worker_logs.txt
+/full_backend_logs.txt
+/last_api_logs.txt
+/logs.txt
+/logs_ascii.txt
+/temp_logs.txt
+/worker_logs.txt
+/debug.txt
+/debug2.txt
+/query_out.txt
+/tb.txt
+/tmp_err.txt
+/api.log
+/api_debug.log
+/api_new.log
+/ui_new.log
+/check_datasets.py
+/check_models.py
+/test_lr_db.py
+/test_lr_grid.py
+/test_models.py
+*logs.txt
+*worker_logs.txt
+backend/tmp_datasets_debug.txt
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Build outputs
+build/
+dist/
+out/
+

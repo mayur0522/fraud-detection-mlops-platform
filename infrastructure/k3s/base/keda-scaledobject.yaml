@@ -1,0 +1,42 @@
+---
+# =============================================================================
+# KEDA ScaledObject — Unified Worker Scaler
+# This single ScaledObject manages the 'worker' deployment by watching 
+# all three Celery queues (features, training, monitoring).
+# =============================================================================
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: worker-scaledobject
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: worker
+  pollingInterval: 15
+  cooldownPeriod: 60
+  minReplicaCount: 0        # Scale to zero when all queues are empty
+  maxReplicaCount: 10       # Total max workers across all queues
+  advanced:
+    restoreToOriginalReplicaCount: true
+  triggers:
+    # Trigger 1: Features Queue (1 replica per 5 tasks)
+    - type: redis
+      metadata:
+        address: redis-master:6379
+        listName: features
+        listLength: "5"
+    
+    # Trigger 2: Training Queue (1 replica per 1 task - heavy work)
+    - type: redis
+      metadata:
+        address: redis-master:6379
+        listName: training
+        listLength: "1"
+
+    # Trigger 3: Monitoring Queue (1 replica per 3 tasks)
+    - type: redis
+      metadata:
+        address: redis-master:6379
+        listName: monitoring
+        listLength: "3"

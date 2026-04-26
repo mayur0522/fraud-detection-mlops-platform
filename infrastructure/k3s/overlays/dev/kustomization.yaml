@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: dev
+resources:
+- namespace.yaml
+- ../../base
+images:
+- name: shadowhubble-api
+  newName: ghcr.io/chandan-akshronix/shadowhubble-api
+  newTag: main-d10fa86e6fe348dea5352d1a847ddfdc05e9fc26
+- name: shadowhubble-ui
+  newName: ghcr.io/chandan-akshronix/shadowhubble-ui
+  newTag: main-d10fa86e6fe348dea5352d1a847ddfdc05e9fc26
