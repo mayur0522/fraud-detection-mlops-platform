@@ -28,6 +28,44 @@ An enterprise-grade MLOps platform for automated fraud detection, featuring real
 *   **Audit Logging**: Comprehensive tracking of all platform actions.
 *   **Security**: Azure AD B2C integration and rate limiting.
 
+## 🏗️ System Architecture
+
+```mermaid
+graph TD
+    subgraph "Client Layer"
+        UI[React Frontend]
+    end
+
+    subgraph "API Layer"
+        API[FastAPI Backend]
+        Auth[Azure AD B2C]
+    end
+
+    subgraph "Processing Layer"
+        Worker[Celery Workers]
+        Redis[(Redis Queue)]
+    end
+
+    subgraph "Storage Layer"
+        DB[(PostgreSQL)]
+        Blob[Azure Blob Storage]
+    end
+
+    subgraph "ML Components"
+        ONNX[ONNX Runtime]
+        Registry[Model Registry]
+    end
+
+    UI --> API
+    API --> Auth
+    API --> Redis
+    Redis --> Worker
+    Worker --> DB
+    Worker --> Blob
+    Worker --> Registry
+    API --> ONNX
+```
+
 ## 📁 Project Structure
 
 ```text
