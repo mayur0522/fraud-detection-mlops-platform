@@ -6,8 +6,8 @@ resources:
 - ../../base
 images:
 - name: shadowhubble-api
-  newName: ghcr.io/chandan-akshronix/shadowhubble-api
-  newTag: main-d10fa86e6fe348dea5352d1a847ddfdc05e9fc26
+  newName: ghcr.io/mayur0522/shadowhubble-api
+  newTag: main-14b50c018423c8b403c6f288c3fbb7bafc94edda
 - name: shadowhubble-ui
-  newName: ghcr.io/chandan-akshronix/shadowhubble-ui
-  newTag: main-d10fa86e6fe348dea5352d1a847ddfdc05e9fc26
+  newName: ghcr.io/mayur0522/shadowhubble-ui
+  newTag: main-14b50c018423c8b403c6f288c3fbb7bafc94edda
